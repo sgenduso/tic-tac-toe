@@ -1,5 +1,8 @@
 var tileArray = document.getElementsByClassName('tile');
 var tileValue = 'X';
+var computerPlay = document.getElementById('computer');
+var friendPlay = document.getElementById('friend');
+
 
 var checkWinner = function (tileArray) {
   for (var i = 0; i < tileArray.length; i+=3) {
@@ -47,15 +50,30 @@ var tieCounter = function (tileArray) {
   }
 };
 
-[].forEach.call(tileArray, function (e, i, a) {
-  e.addEventListener('click', function() {
-    if (e.innerHTML === ""){
-      this.innerHTML = tileValue;
-      checkWinner(a);
-      tieCounter(a);
-      tileValue = tileValue === 'O' ? 'X' : 'O';
-    } else {
-      alert('This tile has already been filled, bitch.');
-    }
+friendPlay.addEventListener('click', function () {
+  friendPlay.className = 'selected';
+  computerPlay.classList.remove('selected');
+  [].forEach.call(tileArray, function (e) {
+    e.innerHTML = '';
   });
-});
+  [].forEach.call(tileArray, function (e, i, a) {
+    e.addEventListener('click', function() {
+      if (e.innerHTML === ""){
+        this.innerHTML = tileValue;
+        checkWinner(a);
+        tieCounter(a);
+        tileValue = tileValue === 'O' ? 'X' : 'O';
+      } else {
+        alert('This tile has already been filled, bitch.');
+      }
+    });
+  });
+})
+
+computerPlay.addEventListener('click', function () {
+  computerPlay.className = 'selected';
+  friendPlay.classList.remove('selected');
+  [].forEach.call(tileArray, function (e) {
+    e.innerHTML = '';
+  });
+})

@@ -2,6 +2,11 @@ extends layout
 
 block content
   h1= title
+  
+  div.play-options
+    button#computer Play Against Computer
+    button#friend Play Against Your Friend
+  
   div#board
     div.tile.right-border#tile1
     div.tile.right-border#tile2
@@ -12,3 +17,4 @@ block content
     div.tile.right-border.top-border#tile7
     div.tile.right-border.top-border#tile8
     div.tile.top-border#tile9
+    

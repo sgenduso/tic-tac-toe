@@ -31,3 +31,16 @@ a {
 .top-border {
   border-top: solid blue 2px;
 }
+
+.play-options {
+  margin-bottom: 20px;
+}
+
+button {
+  margin-right: 20px;
+}
+
+.selected {
+  background-color: green;
+  color: white;
+}
