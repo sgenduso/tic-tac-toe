@@ -31,11 +31,28 @@ var checkWinner = function (tileArray) {
   }
 };
 
+var tieCounter = function (tileArray) {
+  var counter = 0;
+  [].forEach.call(tileArray, function (e) {
+    if (e.innerHTML !== '') {
+      counter++;
+    };
+  });
+  if (counter === 9) {
+    alert("This is a freaking tie");
+    tileValue = 'O';
+    [].forEach.call(tileArray, function (e) {
+      e.innerHTML = '';
+    });
+  }
+};
+
 [].forEach.call(tileArray, function (e, i, a) {
   e.addEventListener('click', function() {
     if (e.innerHTML === ""){
       this.innerHTML = tileValue;
       checkWinner(a);
+      tieCounter(a);
       tileValue = tileValue === 'O' ? 'X' : 'O';
     } else {
       alert('This tile has already been filled, bitch.');
