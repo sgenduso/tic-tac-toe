@@ -16,7 +16,6 @@ var checkWinner = function (tileArray, button) {
       alert('WINNA WINNA', button);
       tileValue = 'O';
       clearBoard();
-      button.click();
     }
     else if (button === computerPlay) {
 
@@ -25,7 +24,6 @@ var checkWinner = function (tileArray, button) {
   for (var i = 0; i < 3; i++) {
     if (tileArray[i].innerHTML === tileArray[i+3].innerHTML && tileArray[i].innerHTML === tileArray[i+6].innerHTML && tileArray[i].innerHTML !== '') {
       alert('WINNA WINNA');
-      button.click();
       tileValue = 'O';
       clearBoard();
     }
@@ -33,7 +31,6 @@ var checkWinner = function (tileArray, button) {
   for (var i = 0; i < 3; i+=2) {
     if(tileArray[i].innerHTML === tileArray[4].innerHTML && tileArray[i].innerHTML === tileArray[8-i].innerHTML && tileArray[i].innerHTML !== '') {
       alert('WINNA WINNA');
-      button.click();
       tileValue = 'O';
       clearBoard();
     }
@@ -49,7 +46,6 @@ var tieCounter = function (tileArray, button) {
   });
   if (counter === 9) {
     alert("This is a freaking tie");
-    button.click();
     tileValue = 'O';
     clearBoard();
   }
