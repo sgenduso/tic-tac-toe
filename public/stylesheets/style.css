@@ -25,11 +25,11 @@ a {
 }
 
 .right-border {
-  border-right: solid blue 2px;
+  border-right: solid blue 5px;
 }
 
 .top-border {
-  border-top: solid blue 2px;
+  border-top: solid blue 5px;
 }
 
 .play-options {
@@ -41,6 +41,10 @@ button {
 }
 
 .selected {
-  background-color: green;
+  background-color: blue;
   color: white;
+}
+
+div:hover {
+  cursor: pointer;
 }
