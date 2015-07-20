@@ -51,10 +51,12 @@ var tieCounter = function (tileArray, button) {
   }
 };
 
+
 friendPlay.addEventListener('click', function () {
   friendPlay.className = 'selected';
   computerPlay.classList.remove('selected');
   clearBoard();
+  tileArray = [].slice.call(tileArray,0);
   [].forEach.call(tileArray, function (e, i, a) {
     e.addEventListener('click', function() {
       if (e.innerHTML === ""){
@@ -73,6 +75,7 @@ computerPlay.addEventListener('click', function () {
   computerPlay.className = 'selected';
   friendPlay.classList.remove('selected');
   clearBoard();
+  tileArray = [].slice.call(tileArray,0);
   var computerMoveArray = [].map.call(tileArray, function (e, i) {
     return i;
   });
